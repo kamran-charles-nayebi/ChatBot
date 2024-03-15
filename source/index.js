@@ -1,4 +1,5 @@
-import query from "./queryProcess.js"; 
+import query from "./queryProcess.js";
+import { add_base_prompt, wrap_user_prompt, bot_response } from "./queryManip.js";
 
 const chatForm = get('form');
 const chatInput = get('input');
@@ -15,8 +16,12 @@ chatForm.addEventListener('submit', async (event) =>  {
   appendMessage('user', text);
   chatInput.value = '';
 
+  const prompt = add_base_prompt() + wrap_user_prompt(text) + bot_response();
+
+  console.log(prompt);
+
   const response = await query({
-    inputs: text,
+    inputs: prompt,
     parameters:{}
   });
 
