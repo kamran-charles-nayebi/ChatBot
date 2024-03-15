@@ -1,0 +1,1 @@
+You have received the information below. Is this information enough to give recommendations or a diagnosis? If yes then reply YES, if no then reply NO. You MUST not reply anything else.
