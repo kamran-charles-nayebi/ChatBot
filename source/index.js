@@ -1,10 +1,8 @@
-import {Conversation} from "./queryManip.js";
+import query from "./queryProcess.js"; 
 
 const chatForm = get('form');
 const chatInput = get('input');
 const chatBox = get('main');
-
-const cv = new Conversation();
 
 
 appendMessage('bot', 'Hello, I am a chatbot who will try to redirect you to the proper medical services. Any diagnosis that comes from our conversation is for illustrative purposes only and if you have doubts, please see a human professional. Start by describing your symptoms.');
@@ -13,14 +11,23 @@ chatForm.addEventListener('submit', async (event) =>  {
   event.preventDefault();
   const text = chatInput.value;
   if (!text) return;
+  
   appendMessage('user', text);
   chatInput.value = '';
-  const textResponse = await cv.getAnswer(text);
+
+  const response = await query({
+    inputs: text,
+    parameters:{}
+  });
+
+  const textResponse = response[0].generated_text;
+  console.log(textResponse)
 
   appendMessage('bot', textResponse);
 });
 
 function appendMessage(side, text) {
+  console.log("append MEssage");
   const bubble = `
     <div class="msg -${side}">
         <div class="bubble">${text}</div>
