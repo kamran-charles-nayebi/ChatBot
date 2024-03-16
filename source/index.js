@@ -1,5 +1,4 @@
-import query from "./queryProcess.js";
-import { add_base_prompt, wrap_user_prompt, bot_response, Conversation} from "./queryManip.js";
+import {Conversation} from "./queryManip.js";
 
 const chatForm = get('form');
 const chatInput = get('input');
@@ -16,16 +15,12 @@ chatForm.addEventListener('submit', async (event) =>  {
   if (!text) return;
   appendMessage('user', text);
   chatInput.value = '';
-
-  console.log(text);
-  const textResponse = cv.getAnswer(text);
-  console.log(textResponse);
+  const textResponse = await cv.getAnswer(text);
 
   appendMessage('bot', textResponse);
 });
 
 function appendMessage(side, text) {
-  console.log("append MEssage");
   const bubble = `
     <div class="msg -${side}">
         <div class="bubble">${text}</div>
