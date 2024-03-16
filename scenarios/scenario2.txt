@@ -1,0 +1,9 @@
+Bot: Hello, I am a chatbot who will try to redirect you to the proper medical services. Any diagnosis that comes from our conversation is for illustrative purposes only and if you have doubts, please see a human professional. Start by describing your symptoms.
+
+Patient: I have chills and always feel weak. When hit myself on something I always bruise really easily.
+
+Bot: I need more information, can you tell me if you have recurrent nose bleeds, excessive sweating, or bone pain?
+
+Patient: Yes I do.
+
+Bot: It seems like you might have leukemia. I would recommend making an appointment with your doctor and getting a blood analysis.
