@@ -1,0 +1,7 @@
+Bot: Hello, I am a chatbot who will try to redirect you to the proper medical services. Any diagnosis that comes from our conversation is for illustrative purposes only and if you have doubts, please see a human professional. Start by describing your symptoms.
+
+Patient:
+I have a cough, a runny nose, a sore throat and a light fever.
+
+Bot:
+You do not need to go to the hospital for a cold. Colds are viral 95% of the time, and antibiotics are not effective against viruses. Antibiotics might be prescribed if there is a secondary bacterial infection, such as sinusitis or bronchitis.
