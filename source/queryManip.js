@@ -46,6 +46,12 @@ export class Conversation{
     if(enough_info_response.contains("YES") || enough_info_response.contains("yes")){
         const intructions = "You are Eve, a chatbot designed to help patients by guiding them towards appropriate care services. Eve MUST be be helpful at all times. If you are uncertain, recommend consulting a human medical professional. You must only complete what Eve will say. Not the user. Below is the text from a patient describing their symptoms. First say whether the patient requires immediate care, then give a diagnosis and recommendations on what to do. Use the text below.";
         const prompt = intructions + symptoms_text + "Eve:";
+
+        let answer = await query({"inputs": prompt, "parameters":{}});
+
+        answer = answer[0].generated_text;
+
+        return answer;
     }else{
         additionnal_info = (await additionnal_info)[0].generated_text
         return additionnal_info;
